@@ -1078,7 +1078,7 @@ main(int argc, char **argv)
   int nRtmpStreamingPort = 1935;	// port
   char *cert = NULL, *key = NULL;
 
-  RTMP_LogPrintf("RTMP Server %s\n", RTMPDUMP_VERSION);
+  RTMP_LogPrintf("RTMP Server 2.3\n");
   RTMP_LogPrintf("(c) 2010 Andrej Stepanchuk, Howard Chu; license: GPL\n\n");
 
   RTMP_debuglevel = RTMP_LOGINFO;

@@ -338,7 +338,7 @@ void processTCPrequest(STREAMING_SERVER * server,	// server socket and state (ou
 
   size_t nRead = 0;
 
-  char srvhead[] = "\r\nServer: HTTP-RTMP Stream Server " RTMPDUMP_VERSION "\r\n";
+  char srvhead[] = "\r\nServer: HTTP-RTMP Stream Server 2.3" "\r\n";
 
   char *status = "404 Not Found";
 
@@ -990,7 +990,7 @@ main(int argc, char **argv)
   char *httpStreamingDevice = DEFAULT_HTTP_STREAMING_DEVICE;	// streaming device, default 0.0.0.0
   int nHttpStreamingPort = 80;	// port
 
-  RTMP_LogPrintf("HTTP-RTMP Stream Gateway %s\n", RTMPDUMP_VERSION);
+  RTMP_LogPrintf("HTTP-RTMP Stream Gateway 2.3\n");
   RTMP_LogPrintf("(c) 2010 Andrej Stepanchuk, Howard Chu; license: GPL\n\n");
 
   // init request

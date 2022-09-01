@@ -803,7 +803,7 @@ main(int argc, char **argv)
       index++;
     }
 
-  RTMP_LogPrintf("RTMPDump %s\n", RTMPDUMP_VERSION);
+  RTMP_LogPrintf("RTMPDump 2.3\n");
   RTMP_LogPrintf
     ("(c) 2010 Andrej Stepanchuk, Howard Chu, The Flvstreamer Team; license: GPL\n");
 
