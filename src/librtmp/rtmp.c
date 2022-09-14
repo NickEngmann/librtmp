@@ -157,12 +157,11 @@ RTMP_GetTime()
 {
 #ifdef _DEBUG
   return 0;
-#elif defined(_WIN32)
-  return timeGetTime();
 #else
   struct tms t;
   if (!clk_tck) clk_tck = sysconf(_SC_CLK_TCK);
   return times(&t) * 1000 / clk_tck;
+  // return millis();
 #endif
 }
 
@@ -4104,10 +4103,11 @@ RTMP_SendPacket(RTMP *r, RTMPPacket *packet, int queue)
       RTMP_Log(RTMP_LOGDEBUG, "Invoking %s", method.av_val);
       /* keep it in call queue till result arrives */
       if (queue) {
+        RTMP_Log(RTMP_LOGDEBUG, "Still in Call Queue...");
         int txn;
         ptr += 3 + method.av_len;
         txn = (int)AMF_DecodeNumber(ptr);
-	AV_queue(&r->m_methodCalls, &r->m_numCalls, &method, txn);
+	      AV_queue(&r->m_methodCalls, &r->m_numCalls, &method, txn);
       }
     }
 
